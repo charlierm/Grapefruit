@@ -2,10 +2,10 @@
 British Colour Manipulation MOTHERFUCKER
 =====================
 
-GrapeFruit is a pure Python module that let you easily manipulate and convert color information.
+GrapeFruit is a pure Python module that let you easily manipulate and convert colour information.
 Its Primary goal is to be *natural* and *flexible*.
 
-The following color systems are supported by GrapeFruit:
+The following colour systems are supported by GrapeFruit:
   * RGB (sRGB)
   * HSL 
   * HSV
@@ -15,8 +15,8 @@ The following color systems are supported by GrapeFruit:
   * CIE-LAB (with the illuminant you want)
   * CMY
   * CMYK
-  * HTML/CSS color definition (#RRGGBB, #RGB or the X11 color name)
-  * RYB (artistic color wheel
+  * HTML/CSS colour definition (#RRGGBB, #RGB or the X11 colour name)
+  * RYB (artistic colour wheel
 Installing
 ============
 

@@ -12,21 +12,21 @@ See the :ref:`genindex` for a list of the topics.
 .. moduleauthor:: Xavier Basty <xbasty@gmail.com>
 
 ==========================
-The Color class
+The Colour class
 ==========================
 
-.. class:: Color
+.. class:: Colour
 
-The grapefruit module contains only the :class:`Color` class, which exposes all
-the functionnalities. It can be used to store a color value and manipulate it,
-or convert it to another color system.
+The grapefruit module contains only the :class:`Colour` class, which exposes all
+the functionnalities. It can be used to store a Colour value and manipulate it,
+or convert it to another Colour system.
 
-If you are only interested in converting you colors from one system to another,
-you can store them using regular tuples instead of :class:`Color` instances.
+If you are only interested in converting you Colours from one system to another,
+you can store them using regular tuples instead of :class:`Colour` instances.
 You can then use the class static methods to perform the conversions.
 
-:class:`Color` stores both the RGB and HSL representation of the color.
-This makes possible to keep the hue intact when the color is a pure white
+:class:`Colour` stores both the RGB and HSL representation of the Colour.
+This makes possible to keep the hue intact when the Colour is a pure white
 due to its lightness.
 However, certain operations work only with the RGB values, and might then
 lose the hue.
@@ -36,13 +36,13 @@ no checks are made whatsoever. If you provide a value outside of the
 specified ranges, you'll get some strange results...
 
 The class instances are immutable, all the methods return a new instance
-of the :class:`Color` class, and all the properties are read-only.
+of the :class:`Colour` class, and all the properties are read-only.
 
 .. note::
 
    Some operations may provide results a bit outside the specified ranges,
    the results are not capped.
-   This is due to certain color systems having a widers gamut than others.
+   This is due to certain Colour systems having a widers gamut than others.
 
 
 Class content
@@ -50,119 +50,119 @@ Class content
 
 - :ref:`class-constants`
 
-  - :const:`Color.WHITE_REFERENCE`
-  - :const:`Color.NAMED_COLOR`
+  - :const:`Colour.WHITE_REFERENCE`
+  - :const:`Colour.NAMED_Colour`
 
 - :ref:`conversion-functions`
 
-  - :meth:`Color.RgbToHsl`
-  - :meth:`Color.HslToRgb`
-  - :meth:`Color.RgbToHsv`
-  - :meth:`Color.HsvToRgb`
-  - :meth:`Color.RgbToYiq`
-  - :meth:`Color.YiqToRgb`
-  - :meth:`Color.RgbToYuv`
-  - :meth:`Color.YuvToRgb`
-  - :meth:`Color.RgbToXyz`
-  - :meth:`Color.XyzToRgb`
-  - :meth:`Color.XyzToLab`
-  - :meth:`Color.LabToXyz`
-  - :meth:`Color.CmykToCmy`
-  - :meth:`Color.CmyToCmyk`
-  - :meth:`Color.RgbToCmy`
-  - :meth:`Color.CmyToRgb`
-  - :meth:`Color.RgbToHtml`
-  - :meth:`Color.HtmlToRgb`
-  - :meth:`Color.RgbToPil`
-  - :meth:`Color.PilToRgb`
-  - :meth:`Color.RgbToWebSafe`
-  - :meth:`Color.RgbToGreyscale`
-  - :meth:`Color.RgbToRyb`
-  - :meth:`Color.RybToRgb`
+  - :meth:`Colour.RgbToHsl`
+  - :meth:`Colour.HslToRgb`
+  - :meth:`Colour.RgbToHsv`
+  - :meth:`Colour.HsvToRgb`
+  - :meth:`Colour.RgbToYiq`
+  - :meth:`Colour.YiqToRgb`
+  - :meth:`Colour.RgbToYuv`
+  - :meth:`Colour.YuvToRgb`
+  - :meth:`Colour.RgbToXyz`
+  - :meth:`Colour.XyzToRgb`
+  - :meth:`Colour.XyzToLab`
+  - :meth:`Colour.LabToXyz`
+  - :meth:`Colour.CmykToCmy`
+  - :meth:`Colour.CmyToCmyk`
+  - :meth:`Colour.RgbToCmy`
+  - :meth:`Colour.CmyToRgb`
+  - :meth:`Colour.RgbToHtml`
+  - :meth:`Colour.HtmlToRgb`
+  - :meth:`Colour.RgbToPil`
+  - :meth:`Colour.PilToRgb`
+  - :meth:`Colour.RgbToWebSafe`
+  - :meth:`Colour.RgbToGreyscale`
+  - :meth:`Colour.RgbToRyb`
+  - :meth:`Colour.RybToRgb`
 
 - :ref:`instantiation-functions`
 
-  - :meth:`Color.NewFromRgb`
-  - :meth:`Color.NewFromHsl`
-  - :meth:`Color.NewFromHsv`
-  - :meth:`Color.NewFromYiq`
-  - :meth:`Color.NewFromYuv`
-  - :meth:`Color.NewFromXyz`
-  - :meth:`Color.NewFromLab`
-  - :meth:`Color.NewFromCmy`
-  - :meth:`Color.NewFromCmyk`
-  - :meth:`Color.NewFromHtml`
-  - :meth:`Color.NewFromPil`
+  - :meth:`Colour.NewFromRgb`
+  - :meth:`Colour.NewFromHsl`
+  - :meth:`Colour.NewFromHsv`
+  - :meth:`Colour.NewFromYiq`
+  - :meth:`Colour.NewFromYuv`
+  - :meth:`Colour.NewFromXyz`
+  - :meth:`Colour.NewFromLab`
+  - :meth:`Colour.NewFromCmy`
+  - :meth:`Colour.NewFromCmyk`
+  - :meth:`Colour.NewFromHtml`
+  - :meth:`Colour.NewFromPil`
 
 - :ref:`properties`
 
-  - :attr:`Color.alpha`
-  - :attr:`Color.whiteRef`
-  - :attr:`Color.rgb`
-  - :attr:`Color.hue`
-  - :attr:`Color.hsl`
-  - :attr:`Color.hsv`
-  - :attr:`Color.yiq`
-  - :attr:`Color.yuv`
-  - :attr:`Color.xyz`
-  - :attr:`Color.lab`
-  - :attr:`Color.cmy`
-  - :attr:`Color.cmyk`
-  - :attr:`Color.html`
-  - :attr:`Color.pil`
-  - :attr:`Color.webSafe`
-  - :attr:`Color.greyscale`
+  - :attr:`Colour.alpha`
+  - :attr:`Colour.whiteRef`
+  - :attr:`Colour.rgb`
+  - :attr:`Colour.hue`
+  - :attr:`Colour.hsl`
+  - :attr:`Colour.hsv`
+  - :attr:`Colour.yiq`
+  - :attr:`Colour.yuv`
+  - :attr:`Colour.xyz`
+  - :attr:`Colour.lab`
+  - :attr:`Colour.cmy`
+  - :attr:`Colour.cmyk`
+  - :attr:`Colour.html`
+  - :attr:`Colour.pil`
+  - :attr:`Colour.webSafe`
+  - :attr:`Colour.greyscale`
 
 - :ref:`manipulation-methods`
 
-  - :meth:`Color.ColorWithAlpha`
-  - :meth:`Color.ColorWithWhiteRef`
-  - :meth:`Color.ColorWithHue`
-  - :meth:`Color.ColorWithSaturation`
-  - :meth:`Color.ColorWithLightness`
-  - :meth:`Color.DarkerColor`
-  - :meth:`Color.LighterColor`
-  - :meth:`Color.Saturate`
-  - :meth:`Color.Desaturate`
-  - :meth:`Color.WebSafeDither`
+  - :meth:`Colour.ColourWithAlpha`
+  - :meth:`Colour.ColourWithWhiteRef`
+  - :meth:`Colour.ColourWithHue`
+  - :meth:`Colour.ColourWithSaturation`
+  - :meth:`Colour.ColourWithLightness`
+  - :meth:`Colour.DarkerColour`
+  - :meth:`Colour.LighterColour`
+  - :meth:`Colour.Saturate`
+  - :meth:`Colour.Desaturate`
+  - :meth:`Colour.WebSafeDither`
 
 - :ref:`generation-methods`
 
-  - :meth:`Color.Gradient`
-  - :meth:`Color.ComplementaryColor`
-  - :meth:`Color.TriadicScheme`
-  - :meth:`Color.TetradicScheme`
-  - :meth:`Color.AnalogousScheme`
+  - :meth:`Colour.Gradient`
+  - :meth:`Colour.ComplementaryColour`
+  - :meth:`Colour.TriadicScheme`
+  - :meth:`Colour.TetradicScheme`
+  - :meth:`Colour.AnalogousScheme`
 
 - :ref:`blending-methods`
 
-  - :meth:`Color.AlphaBlend`
-  - :meth:`Color.Blend`
+  - :meth:`Colour.AlphaBlend`
+  - :meth:`Colour.Blend`
 
 
 Example usage
 ---------------
 
-  To create an instance of the grapefruit.Color from RGB values:
+  To create an instance of the grapefruit.Colour from RGB values:
   
     >>> import grapefruit
     >>> r, g, b = 1, 0.5, 0
-    >>> col = grapefruit.Color.NewFromRgb(r, g, b)
+    >>> col = grapefruit.Colour.NewFromRgb(r, g, b)
   
-  To get the values of the color in another colorspace:
+  To get the values of the Colour in another Colourspace:
   
     >>> h, s, v = col.hsv
     >>> l, a, b = col.lab
   
-  To get the complementary of a color:
+  To get the complementary of a Colour:
   
-    >>> compl = col.ComplementaryColor()
+    >>> compl = col.ComplementaryColour()
     >>> print compl.hsl
     (210.0, 1.0, 0.5)
   
   To directly convert RGB values to their HSL equivalent:
   
-    >>> h, s, l = Color.RgbToHsl(r, g, b)
+    >>> h, s, l = Colour.RgbToHsl(r, g, b)
 
 
 
@@ -171,7 +171,7 @@ Example usage
 Class Constants
 -----------------
 
-.. data:: Color.WHITE_REFERENCE
+.. data:: Colour.WHITE_REFERENCE
 
 The reference white points of the CIE standards illuminants, calculated from
 the chromaticity coordinates found at:
@@ -201,7 +201,7 @@ The possible values for ``<illuminant>`` are the name of the standard illuminant
   C       6774 K    North sky daylight (obsolete)
   D50     5003 K    ICC Profile PCS. Horizon light.
   D55     5503 K    Compromise between incandescent and daylight
-  D65     6504 K    Noon daylight (TV & sRGB colorspace)
+  D65     6504 K    Noon daylight (TV & sRGB Colourspace)
   D75     7504 K    North sky day light
   E       ~5455 K   Equal energy radiator (not a black body)
   F1      6430 K    Daylight Fluorescent
@@ -218,17 +218,17 @@ The possible values for ``<illuminant>`` are the name of the standard illuminant
   F12     3000 K    Narrowband fluorescent, Philips TL83, Ultralume 30
   ======  ========  ==================================================
 
-.. data:: Color.NAMED_COLOR
+.. data:: Colour.NAMED_Colour
 
-The names and RGB values of the X11 colors supported by popular browsers, with
+The names and RGB values of the X11 Colours supported by popular browsers, with
 the gray/grey spelling issues, fixed so that both work (e.g light*grey* and
 light*gray*).
 
 Note: For *Gray*, *Green*, *Maroon* and *Purple*, the HTML/CSS values are used
 instead of the X11 ones
-(see `X11/CSS clashes <http://en.wikipedia.org/wiki/X11_color_names#Color_names_that_clash_between_X11_and_HTML.2FCSS>`_)
+(see `X11/CSS clashes <http://en.wikipedia.org/wiki/X11_Colour_names#Colour_names_that_clash_between_X11_and_HTML.2FCSS>`_)
 
-Reference: `CSS3 Color module <http://www.w3.org/TR/css3-iccprof#x11-color>`_
+Reference: `CSS3 Colour module <http://www.w3.org/TR/css3-iccprof#x11-Colour>`_
 
 
 .. _conversion-functions:
@@ -236,57 +236,57 @@ Reference: `CSS3 Color module <http://www.w3.org/TR/css3-iccprof#x11-color>`_
 Conversion functions
 --------------------
 
-The conversion functions are static methods of the :class:`Color` class that
-let you convert a color stored as the list of its components rather than
-as a :class:`Color` instance.
+The conversion functions are static methods of the :class:`Colour` class that
+let you convert a Colour stored as the list of its components rather than
+as a :class:`Colour` instance.
 
-.. automethod:: Color.RgbToHsl
+.. automethod:: Colour.RgbToHsl
 
-.. automethod:: Color.HslToRgb
+.. automethod:: Colour.HslToRgb
 
-.. automethod:: Color.RgbToHsv
+.. automethod:: Colour.RgbToHsv
 
-.. automethod:: Color.HsvToRgb
+.. automethod:: Colour.HsvToRgb
 
-.. automethod:: Color.RgbToYiq
+.. automethod:: Colour.RgbToYiq
 
-.. automethod:: Color.YiqToRgb
+.. automethod:: Colour.YiqToRgb
 
-.. automethod:: Color.RgbToYuv
+.. automethod:: Colour.RgbToYuv
 
-.. automethod:: Color.YuvToRgb
+.. automethod:: Colour.YuvToRgb
 
-.. automethod:: Color.RgbToXyz
+.. automethod:: Colour.RgbToXyz
 
-.. automethod:: Color.XyzToRgb
+.. automethod:: Colour.XyzToRgb
 
-.. automethod:: Color.XyzToLab
+.. automethod:: Colour.XyzToLab
 
-.. automethod:: Color.LabToXyz
+.. automethod:: Colour.LabToXyz
 
-.. automethod:: Color.CmykToCmy
+.. automethod:: Colour.CmykToCmy
 
-.. automethod:: Color.CmyToCmyk
+.. automethod:: Colour.CmyToCmyk
 
-.. automethod:: Color.RgbToCmy
+.. automethod:: Colour.RgbToCmy
 
-.. automethod:: Color.CmyToRgb
+.. automethod:: Colour.CmyToRgb
 
-.. automethod:: Color.RgbToHtml
+.. automethod:: Colour.RgbToHtml
 
-.. automethod:: Color.HtmlToRgb
+.. automethod:: Colour.HtmlToRgb
 
-.. automethod:: Color.RgbToPil
+.. automethod:: Colour.RgbToPil
 
-.. automethod:: Color.PilToRgb
+.. automethod:: Colour.PilToRgb
 
-.. automethod:: Color.RgbToWebSafe
+.. automethod:: Colour.RgbToWebSafe
 
-.. automethod:: Color.RgbToGreyscale
+.. automethod:: Colour.RgbToGreyscale
 
-.. automethod:: Color.RgbToRyb
+.. automethod:: Colour.RgbToRyb
 
-.. automethod:: Color.RybToRgb
+.. automethod:: Colour.RybToRgb
 
 
 
@@ -295,30 +295,30 @@ as a :class:`Color` instance.
 Instantiation functions
 -----------------------
 
-The instantiation functions let you create a new instance of the :class:`Color`
-class from the color components using the color system of your choice.
+The instantiation functions let you create a new instance of the :class:`Colour`
+class from the Colour components using the Colour system of your choice.
 
-.. automethod:: Color.NewFromRgb
+.. automethod:: Colour.NewFromRgb
 
-.. automethod:: Color.NewFromHsl
+.. automethod:: Colour.NewFromHsl
 
-.. automethod:: Color.NewFromHsv
+.. automethod:: Colour.NewFromHsv
 
-.. automethod:: Color.NewFromYiq
+.. automethod:: Colour.NewFromYiq
 
-.. automethod:: Color.NewFromYuv
+.. automethod:: Colour.NewFromYuv
 
-.. automethod:: Color.NewFromXyz
+.. automethod:: Colour.NewFromXyz
 
-.. automethod:: Color.NewFromLab
+.. automethod:: Colour.NewFromLab
 
-.. automethod:: Color.NewFromCmy
+.. automethod:: Colour.NewFromCmy
 
-.. automethod:: Color.NewFromCmyk
+.. automethod:: Colour.NewFromCmyk
 
-.. automethod:: Color.NewFromHtml
+.. automethod:: Colour.NewFromHtml
 
-.. automethod:: Color.NewFromPil
+.. automethod:: Colour.NewFromPil
 
 
 
@@ -327,56 +327,56 @@ class from the color components using the color system of your choice.
 Properties
 ----------
 
-The properties get the value of the instance in the specified color model.
+The properties get the value of the instance in the specified Colour model.
 
 The properties returning calculated values unless marked otherwise.
 
 .. note::
 
    All the properties are read-only. You need to make a copy of the instance
-   to modify the color value.
+   to modify the Colour value.
 
-.. autoattribute:: Color.alpha
-
-  *This value is not calculated,  the stored value is returned directly.*
-
-.. autoattribute:: Color.whiteRef
+.. autoattribute:: Colour.alpha
 
   *This value is not calculated,  the stored value is returned directly.*
 
-.. autoattribute:: Color.rgb
+.. autoattribute:: Colour.whiteRef
 
   *This value is not calculated,  the stored value is returned directly.*
 
-.. autoattribute:: Color.hue
+.. autoattribute:: Colour.rgb
 
   *This value is not calculated,  the stored value is returned directly.*
 
-.. autoattribute:: Color.hsl
+.. autoattribute:: Colour.hue
 
   *This value is not calculated,  the stored value is returned directly.*
 
-.. autoattribute:: Color.hsv
+.. autoattribute:: Colour.hsl
 
-.. autoattribute:: Color.yiq
+  *This value is not calculated,  the stored value is returned directly.*
 
-.. autoattribute:: Color.yuv
+.. autoattribute:: Colour.hsv
 
-.. autoattribute:: Color.xyz
+.. autoattribute:: Colour.yiq
 
-.. autoattribute:: Color.lab
+.. autoattribute:: Colour.yuv
 
-.. autoattribute:: Color.cmy
+.. autoattribute:: Colour.xyz
 
-.. autoattribute:: Color.cmyk
+.. autoattribute:: Colour.lab
 
-.. autoattribute:: Color.html
+.. autoattribute:: Colour.cmy
 
-.. autoattribute:: Color.pil
+.. autoattribute:: Colour.cmyk
 
-.. autoattribute:: Color.webSafe
+.. autoattribute:: Colour.html
 
-.. attribute:: Color.greyscale
+.. autoattribute:: Colour.pil
+
+.. autoattribute:: Colour.webSafe
+
+.. attribute:: Colour.greyscale
 
 
 
@@ -385,33 +385,33 @@ The properties returning calculated values unless marked otherwise.
 Manipulation methods
 --------------------
 
-The manipulations methods let you create a new color by changing an existing
-color properties.
+The manipulations methods let you create a new Colour by changing an existing
+Colour properties.
 
 .. note::
 
-   The methods **do not** modify the current Color instance. They create a
+   The methods **do not** modify the current Colour instance. They create a
    new instance or a tuple of new instances with the specified modifications.
 
-.. automethod:: Color.ColorWithAlpha
+.. automethod:: Colour.ColourWithAlpha
 
-.. automethod:: Color.ColorWithWhiteRef
+.. automethod:: Colour.ColourWithWhiteRef
 
-.. automethod:: Color.ColorWithHue
+.. automethod:: Colour.ColourWithHue
 
-.. automethod:: Color.ColorWithSaturation
+.. automethod:: Colour.ColourWithSaturation
 
-.. automethod:: Color.ColorWithLightness
+.. automethod:: Colour.ColourWithLightness
 
-.. automethod:: Color.DarkerColor
+.. automethod:: Colour.DarkerColour
 
-.. automethod:: Color.LighterColor
+.. automethod:: Colour.LighterColour
 
-.. automethod:: Color.Saturate
+.. automethod:: Colour.Saturate
 
-.. automethod:: Color.Desaturate
+.. automethod:: Colour.Desaturate
 
-.. automethod:: Color.WebSafeDither
+.. automethod:: Colour.WebSafeDither
 
 
 
@@ -420,32 +420,32 @@ color properties.
 Generation methods
 ------------------
 
-The generation methods let you create a color scheme by using a color as the
+The generation methods let you create a Colour scheme by using a Colour as the
 start point.
 
 All the method, appart from Gradient and MonochromeScheme, have a 'mode'
-parameter that let you choose which color wheel should be used to generate
+parameter that let you choose which Colour wheel should be used to generate
 the scheme.
 
 The following modes are available:
   :ryb:
-    The `RYB <http://en.wikipedia.org/wiki/RYB_color_model>`_ color wheel,
-    or *artistic color wheel*. While scientifically incorrect, it generally
+    The `RYB <http://en.wikipedia.org/wiki/RYB_Colour_model>`_ Colour wheel,
+    or *artistic Colour wheel*. While scientifically incorrect, it generally
     produces better schemes than RGB.
   :rgb:
-    The standard RGB color wheel.
+    The standard RGB Colour wheel.
 
-.. automethod:: Color.Gradient
+.. automethod:: Colour.Gradient
 
-.. automethod:: Color.ComplementaryColor
+.. automethod:: Colour.ComplementaryColour
 
-.. automethod:: Color.MonochromeScheme
+.. automethod:: Colour.MonochromeScheme
 
-.. automethod:: Color.TriadicScheme
+.. automethod:: Colour.TriadicScheme
 
-.. automethod:: Color.TetradicScheme
+.. automethod:: Colour.TetradicScheme
 
-.. automethod:: Color.AnalogousScheme
+.. automethod:: Colour.AnalogousScheme
 
 
 
@@ -454,6 +454,6 @@ The following modes are available:
 Blending methods
 ----------------
 
-.. automethod:: Color.AlphaBlend
+.. automethod:: Colour.AlphaBlend
 
-.. automethod:: Color.Blend
+.. automethod:: Colour.Blend
