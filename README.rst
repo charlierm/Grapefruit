@@ -1,5 +1,5 @@
 =====================
-README for GrapeFruit
+British Colour Manipulation MOTHERFUCKER
 =====================
 
 GrapeFruit is a pure Python module that let you easily manipulate and convert color information.
