@@ -29,12 +29,12 @@ METADATA = dict(
   py_modules = ['grapefruit'],
   author = 'Xavier Basty',
   author_email = 'xbasty@gmail.com',
-  description = 'A module to manipulate color information easily.',
+  description = 'A module to manipulate Colour information easily.',
   license = 'Apache License 2.0',
   url = 'http://code.google.com/p/grapefruit/',
   download_url = 'http://grapefruit.googlecode.com/files/grapefruit-%s.tar.gz' % \
     __version__,
-  keywords ='color conversion',
+  keywords ='Colour conversion',
 )
 
 # Extra package metadata to be used only if setuptools is installed
