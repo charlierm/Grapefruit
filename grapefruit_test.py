@@ -49,175 +49,175 @@ class GrapeFruitTestCase(unittest.TestCase):
   assertNear = failUnlessNear
 
 class ConversionTest(GrapeFruitTestCase):
-  '''Test the static color conversion methods.'''
+  '''Test the static Colour conversion methods.'''
 
   def testRgbHsl(self):
-    self.assertNear((30.0, 1.0, 0.5), grapefruit.Color.RgbToHsl(1, 0.5, 0))
-    self.assertNear((20.0, 1.0, 0.625), grapefruit.Color.RgbToHsl(1, 0.5, 0.25)) #ff8040
-    self.assertNear((40.0, 1.0, 0.375), grapefruit.Color.RgbToHsl(0.75, 0.5, 0)) #bf8000
+    self.assertNear((30.0, 1.0, 0.5), grapefruit.Colour.RgbToHsl(1, 0.5, 0))
+    self.assertNear((20.0, 1.0, 0.625), grapefruit.Colour.RgbToHsl(1, 0.5, 0.25)) #ff8040
+    self.assertNear((40.0, 1.0, 0.375), grapefruit.Colour.RgbToHsl(0.75, 0.5, 0)) #bf8000
 
-    self.assertNear((1, 0.5, 0), grapefruit.Color.HslToRgb(30.0, 1.0, 0.5))
-    self.assertNear((1, 0.5, 0.25), grapefruit.Color.HslToRgb(20.0, 1.0, 0.625))
-    self.assertNear((0.75, 0.5, 0), grapefruit.Color.HslToRgb(40.0, 1.0, 0.375))
+    self.assertNear((1, 0.5, 0), grapefruit.Colour.HslToRgb(30.0, 1.0, 0.5))
+    self.assertNear((1, 0.5, 0.25), grapefruit.Colour.HslToRgb(20.0, 1.0, 0.625))
+    self.assertNear((0.75, 0.5, 0), grapefruit.Colour.HslToRgb(40.0, 1.0, 0.375))
 
   def testRgbHsv(self):
-    self.assertEqual((30.0, 1.0, 1.0), grapefruit.Color.RgbToHsv(1, 0.5, 0))
-    self.assertEqual((1, 0.5, 0), grapefruit.Color.HsvToRgb(30.0, 1.0, 1.0))
+    self.assertEqual((30.0, 1.0, 1.0), grapefruit.Colour.RgbToHsv(1, 0.5, 0))
+    self.assertEqual((1, 0.5, 0), grapefruit.Colour.HsvToRgb(30.0, 1.0, 1.0))
 
   def testRgbYiq(self):
-    self.assertNear((0.5923, 0.4589, -0.05), grapefruit.Color.RgbToYiq(1, 0.5, 0))
-    self.assertNear((1, 0.5, 0), grapefruit.Color.YiqToRgb(0.5923, 0.4589, -0.05))
+    self.assertNear((0.5923, 0.4589, -0.05), grapefruit.Colour.RgbToYiq(1, 0.5, 0))
+    self.assertNear((1, 0.5, 0), grapefruit.Colour.YiqToRgb(0.5923, 0.4589, -0.05))
 
   def testRgbYuv(self):
-    self.assertNear((0.5925, -0.2916, 0.3575), grapefruit.Color.RgbToYuv(1, 0.5, 0))
-    self.assertNear((1, 0.5, 0), grapefruit.Color.YuvToRgb(0.5925, -0.2916, 0.3575))
+    self.assertNear((0.5925, -0.2916, 0.3575), grapefruit.Colour.RgbToYuv(1, 0.5, 0))
+    self.assertNear((1, 0.5, 0), grapefruit.Colour.YuvToRgb(0.5925, -0.2916, 0.3575))
 
   def testRgbXyz(self):
-    self.assertNear((0.4890, 0.3657, 0.04485), grapefruit.Color.RgbToXyz(1, 0.5, 0))
-    self.assertNear((1, 0.5, 0), grapefruit.Color.XyzToRgb(0.488941, 0.365682, 0.0448137))
+    self.assertNear((0.4890, 0.3657, 0.04485), grapefruit.Colour.RgbToXyz(1, 0.5, 0))
+    self.assertNear((1, 0.5, 0), grapefruit.Colour.XyzToRgb(0.488941, 0.365682, 0.0448137))
 
   def testXyzLab(self):
-    self.assertNear((66.9518, 0.4308, 0.7397), grapefruit.Color.XyzToLab(0.488941, 0.365682, 0.0448137))
-    self.assertNear((0.4890, 0.3657, 0.0449), grapefruit.Color.LabToXyz(66.9518, 0.4308, 0.7397))
-    self.assertNear((66.9518, 0.4117, 0.6728), grapefruit.Color.XyzToLab(0.488941, 0.365682, 0.0448137, grapefruit.Color.WHITE_REFERENCE["std_D50"]))
-    self.assertNear((0.4890, 0.3657, 0.0449), grapefruit.Color.LabToXyz(66.9518, 0.4117, 0.6728, grapefruit.Color.WHITE_REFERENCE["std_D50"]))
+    self.assertNear((66.9518, 0.4308, 0.7397), grapefruit.Colour.XyzToLab(0.488941, 0.365682, 0.0448137))
+    self.assertNear((0.4890, 0.3657, 0.0449), grapefruit.Colour.LabToXyz(66.9518, 0.4308, 0.7397))
+    self.assertNear((66.9518, 0.4117, 0.6728), grapefruit.Colour.XyzToLab(0.488941, 0.365682, 0.0448137, grapefruit.Colour.WHITE_REFERENCE["std_D50"]))
+    self.assertNear((0.4890, 0.3657, 0.0449), grapefruit.Colour.LabToXyz(66.9518, 0.4117, 0.6728, grapefruit.Colour.WHITE_REFERENCE["std_D50"]))
 
   def testCmykCmy(self):
-    self.assertNear((1, 0.32, 0, 0.5), grapefruit.Color.CmyToCmyk(1.0, 0.66, 0.5))
-    self.assertNear((1.0, 0.66, 0.5), grapefruit.Color.CmykToCmy(1, 0.32, 0, 0.5))
+    self.assertNear((1, 0.32, 0, 0.5), grapefruit.Colour.CmyToCmyk(1.0, 0.66, 0.5))
+    self.assertNear((1.0, 0.66, 0.5), grapefruit.Colour.CmykToCmy(1, 0.32, 0, 0.5))
 
   def testRgbCmy(self):
-    self.assertEqual((0, 0.5, 1), grapefruit.Color.RgbToCmy(1, 0.5, 0))
-    self.assertEqual((1, 0.5, 0), grapefruit.Color.CmyToRgb(0, 0.5, 1))
+    self.assertEqual((0, 0.5, 1), grapefruit.Colour.RgbToCmy(1, 0.5, 0))
+    self.assertEqual((1, 0.5, 0), grapefruit.Colour.CmyToRgb(0, 0.5, 1))
 
   def testRgbHtml(self):
-    self.assertEqual("#ff8000", grapefruit.Color.RgbToHtml(1, 0.5, 0))
-    self.assertNear((1.0, 0.5020, 0.0), grapefruit.Color.HtmlToRgb("#ff8000"))
-    self.assertNear((1.0, 0.5020, 0.0), grapefruit.Color.HtmlToRgb("ff8000"))
-    self.assertNear((1.0, 0.4, 0.0), grapefruit.Color.HtmlToRgb("#f60"))
-    self.assertNear((1.0, 0.4, 0.0), grapefruit.Color.HtmlToRgb("f60"))
-    self.assertNear((1.000000, 0.980392, 0.803922), grapefruit.Color.HtmlToRgb("lemonchiffon"))
+    self.assertEqual("#ff8000", grapefruit.Colour.RgbToHtml(1, 0.5, 0))
+    self.assertNear((1.0, 0.5020, 0.0), grapefruit.Colour.HtmlToRgb("#ff8000"))
+    self.assertNear((1.0, 0.5020, 0.0), grapefruit.Colour.HtmlToRgb("ff8000"))
+    self.assertNear((1.0, 0.4, 0.0), grapefruit.Colour.HtmlToRgb("#f60"))
+    self.assertNear((1.0, 0.4, 0.0), grapefruit.Colour.HtmlToRgb("f60"))
+    self.assertNear((1.000000, 0.980392, 0.803922), grapefruit.Colour.HtmlToRgb("lemonchiffon"))
 
   def testRgbPil(self):
-    self.assertNear(0x0080ff, grapefruit.Color.RgbToPil(1, 0.5, 0))
-    self.assertNear((1.0, 0.5020, 0), grapefruit.Color.PilToRgb(0x0080ff))
+    self.assertNear(0x0080ff, grapefruit.Colour.RgbToPil(1, 0.5, 0))
+    self.assertNear((1.0, 0.5020, 0), grapefruit.Colour.PilToRgb(0x0080ff))
 
   def testWebSafeComponent(self):
-    self.assertEqual(0.2, grapefruit.Color._WebSafeComponent(0.2))
-    self.assertEqual(0.2, grapefruit.Color._WebSafeComponent(0.25))
-    self.assertEqual(0.4, grapefruit.Color._WebSafeComponent(0.3))
-    self.assertEqual(0.4, grapefruit.Color._WebSafeComponent(0.25, True))
-    self.assertEqual(0.2, grapefruit.Color._WebSafeComponent(0.2, True))
-    self.assertEqual(0.2, grapefruit.Color._WebSafeComponent(0.3, True))
+    self.assertEqual(0.2, grapefruit.Colour._WebSafeComponent(0.2))
+    self.assertEqual(0.2, grapefruit.Colour._WebSafeComponent(0.25))
+    self.assertEqual(0.4, grapefruit.Colour._WebSafeComponent(0.3))
+    self.assertEqual(0.4, grapefruit.Colour._WebSafeComponent(0.25, True))
+    self.assertEqual(0.2, grapefruit.Colour._WebSafeComponent(0.2, True))
+    self.assertEqual(0.2, grapefruit.Colour._WebSafeComponent(0.3, True))
 
   def testRgbToWebSafe(self):
-    self.assertEqual((1.0, 0.6, 0.0), grapefruit.Color.RgbToWebSafe(1, 0.55, 0.0))
-    self.assertEqual((1.0, 0.4, 0.0), grapefruit.Color.RgbToWebSafe(1, 0.55, 0.0, True))
-    self.assertEqual((1.0, 0.4, 0.0), grapefruit.Color.RgbToWebSafe(1, 0.5, 0.0, True))
+    self.assertEqual((1.0, 0.6, 0.0), grapefruit.Colour.RgbToWebSafe(1, 0.55, 0.0))
+    self.assertEqual((1.0, 0.4, 0.0), grapefruit.Colour.RgbToWebSafe(1, 0.55, 0.0, True))
+    self.assertEqual((1.0, 0.4, 0.0), grapefruit.Colour.RgbToWebSafe(1, 0.5, 0.0, True))
 
   def testRgbToGreyscale(self):
-    self.assertEqual((0.6, 0.6, 0.6), grapefruit.Color.RgbToGreyscale(1, 0.8, 0))
+    self.assertEqual((0.6, 0.6, 0.6), grapefruit.Colour.RgbToGreyscale(1, 0.8, 0))
 
 class NewFromTest(GrapeFruitTestCase):
-  '''Test the static color instanciation methods.'''
+  '''Test the static Colour instanciation methods.'''
   def testNewFromRgb(self):
-    c = grapefruit.Color.NewFromRgb(1.0, 0.5, 0.0)
+    c = grapefruit.Colour.NewFromRgb(1.0, 0.5, 0.0)
     self.assertEqual(c, (1.0, 0.5, 0.0, 1.0))
-    c = grapefruit.Color.NewFromRgb(1.0, 0.5, 0.0, 0.5)
+    c = grapefruit.Colour.NewFromRgb(1.0, 0.5, 0.0, 0.5)
     self.assertEqual(c, (1.0, 0.5, 0.0, 0.5))
 
   def testNewFromHsl(self):
-    c = grapefruit.Color.NewFromHsl(30, 1, 0.5)
+    c = grapefruit.Colour.NewFromHsl(30, 1, 0.5)
     self.assertEqual(c, (1.0, 0.5, 0.0, 1.0))
-    c = grapefruit.Color.NewFromHsl(30, 1, 0.5, 0.5)
+    c = grapefruit.Colour.NewFromHsl(30, 1, 0.5, 0.5)
     self.assertEqual(c, (1.0, 0.5, 0.0, 0.5))
 
   def testNewFromHsv(self):
-    c = grapefruit.Color.NewFromHsv(30, 1, 1)
+    c = grapefruit.Colour.NewFromHsv(30, 1, 1)
     self.assertEqual(c, (1.0, 0.5, 0.0, 1.0))
-    c = grapefruit.Color.NewFromHsv(30, 1, 1, 0.5)
+    c = grapefruit.Colour.NewFromHsv(30, 1, 1, 0.5)
     self.assertEqual(c, (1.0, 0.5, 0.0, 0.5))
 
   def testNewFromYiq(self):
-    c = grapefruit.Color.NewFromYiq(0.5923, 0.4589, -0.0499818)
+    c = grapefruit.Colour.NewFromYiq(0.5923, 0.4589, -0.0499818)
     self.assertNear(c, (1, 0.5, 0, 1))
-    c = grapefruit.Color.NewFromYiq(0.5923, 0.4589,-0.05, 0.5)
+    c = grapefruit.Colour.NewFromYiq(0.5923, 0.4589,-0.05, 0.5)
     self.assertNear(c, (1, 0.5, 0, 0.5))
 
   def testNewFromYuv(self):
-    c = grapefruit.Color.NewFromYuv(0.5925, -0.2916, 0.3575)
+    c = grapefruit.Colour.NewFromYuv(0.5925, -0.2916, 0.3575)
     self.assertNear(c, (1, 0.5, 0, 1))
-    c = grapefruit.Color.NewFromYuv(0.5925, -0.2916, 0.3575, 0.5)
+    c = grapefruit.Colour.NewFromYuv(0.5925, -0.2916, 0.3575, 0.5)
     self.assertNear(c, (1, 0.5, 0, 0.5))
 
   def testNewFromXyz(self):
-    c = grapefruit.Color.NewFromXyz(0.488941, 0.365682, 0.0448137)
+    c = grapefruit.Colour.NewFromXyz(0.488941, 0.365682, 0.0448137)
     self.assertNear(c, (1, 0.5, 0, 1))
-    c = grapefruit.Color.NewFromXyz(0.488941, 0.365682, 0.0448137, 0.5)
+    c = grapefruit.Colour.NewFromXyz(0.488941, 0.365682, 0.0448137, 0.5)
     self.assertNear(c, (1, 0.5, 0, 0.5))
 
   def testNewFromLab(self):
-    c = grapefruit.Color.NewFromLab(66.9518, 0.43084, 0.739692)
+    c = grapefruit.Colour.NewFromLab(66.9518, 0.43084, 0.739692)
     self.assertNear(c, (1, 0.5, 0, 1))
-    c = grapefruit.Color.NewFromLab(66.9518, 0.43084, 0.739692, wref=grapefruit.Color.WHITE_REFERENCE["std_D50"])
+    c = grapefruit.Colour.NewFromLab(66.9518, 0.43084, 0.739692, wref=grapefruit.Colour.WHITE_REFERENCE["std_D50"])
     self.assertNear(c, (1.0123754, 0.492012, -0.143110, 1))
-    c = grapefruit.Color.NewFromLab(66.9518, 0.43084, 0.739692, 0.5)
+    c = grapefruit.Colour.NewFromLab(66.9518, 0.43084, 0.739692, 0.5)
     self.assertNear(c, (1, 0.5, 0, 0.5))
-    c = grapefruit.Color.NewFromLab(66.9518, 0.43084, 0.739692, 0.5, grapefruit.Color.WHITE_REFERENCE["std_D50"])
+    c = grapefruit.Colour.NewFromLab(66.9518, 0.43084, 0.739692, 0.5, grapefruit.Colour.WHITE_REFERENCE["std_D50"])
     self.assertNear(c, (1.0123754, 0.492012, -0.143110, 0.5))
 
   def testNewFromLabInteger(self):
       # Allow specifying lightness as an integer.
       lab = (60, 0.3, 0.3)
-      c = grapefruit.Color.NewFromLab(*lab)
+      c = grapefruit.Colour.NewFromLab(*lab)
       self.assertNear(c.lab, lab)
       self.assertTrue(c.isLegal)
 
   def testNewFromCmy(self):
-    c = grapefruit.Color.NewFromCmy(0, 0.5, 1)
+    c = grapefruit.Colour.NewFromCmy(0, 0.5, 1)
     self.assertEqual(c, (1, 0.5, 0, 1.0))
-    c = grapefruit.Color.NewFromCmy(0, 0.5, 1, 0.5)
+    c = grapefruit.Colour.NewFromCmy(0, 0.5, 1, 0.5)
     self.assertEqual(c, (1, 0.5, 0, 0.5))
 
   def testNewFromCmyk(self):
-    c = grapefruit.Color.NewFromCmyk(1, 0.32, 0, 0.5)
+    c = grapefruit.Colour.NewFromCmyk(1, 0.32, 0, 0.5)
     self.assertNear(c, (0, 0.34, 0.5, 1))
-    c = grapefruit.Color.NewFromCmyk(1, 0.32, 0, 0.5, 0.5)
+    c = grapefruit.Colour.NewFromCmyk(1, 0.32, 0, 0.5, 0.5)
     self.assertNear(c, (0, 0.34, 0.5, 0.5))
 
   def testNewFromHtml(self):
-    c = grapefruit.Color.NewFromHtml("#ff8000")
+    c = grapefruit.Colour.NewFromHtml("#ff8000")
     self.assertNear(c, (1, 0.5020, 0, 1))
-    c = grapefruit.Color.NewFromHtml("ff8000")
+    c = grapefruit.Colour.NewFromHtml("ff8000")
     self.assertNear(c, (1, 0.5020, 0, 1))
-    c = grapefruit.Color.NewFromHtml("#f60")
+    c = grapefruit.Colour.NewFromHtml("#f60")
     self.assertNear(c, (1, 0.4, 0, 1))
-    c = grapefruit.Color.NewFromHtml("f60")
+    c = grapefruit.Colour.NewFromHtml("f60")
     self.assertNear(c, (1, 0.4, 0, 1))
-    c = grapefruit.Color.NewFromHtml("lemonchiffon")
+    c = grapefruit.Colour.NewFromHtml("lemonchiffon")
     self.assertNear(c, (1, 0.9804, 0.8039, 1))
-    c = grapefruit.Color.NewFromHtml("#ff8000", 0.5)
+    c = grapefruit.Colour.NewFromHtml("#ff8000", 0.5)
     self.assertNear(c, (1, 0.5020, 0, 0.5))
 
   def testNewFromPil(self):
-    c = grapefruit.Color.NewFromPil(0x0080ff)
+    c = grapefruit.Colour.NewFromPil(0x0080ff)
     self.assertNear(c, (1, 0.5020, 0, 1))
-    c = grapefruit.Color.NewFromPil(0x0080ff, 0.5)
+    c = grapefruit.Colour.NewFromPil(0x0080ff, 0.5)
     self.assertNear(c, (1, 0.5020, 0, 0.5))
 
 
-class ColorTest(GrapeFruitTestCase):
+class ColourTest(GrapeFruitTestCase):
   def setUp(self):
-    self.rgbCol = grapefruit.Color.NewFromRgb(1.0, 0.5, 0.0)
-    self.hslCol = grapefruit.Color.NewFromHsl(30, 1, 0.5)
-    self.hslCol2 = grapefruit.Color.NewFromHsl(30, 0.5, 0.5)
+    self.rgbCol = grapefruit.Colour.NewFromRgb(1.0, 0.5, 0.0)
+    self.hslCol = grapefruit.Colour.NewFromHsl(30, 1, 0.5)
+    self.hslCol2 = grapefruit.Colour.NewFromHsl(30, 0.5, 0.5)
 
   def testInit(self):
-    self.assertEqual(grapefruit.Color((1.0, 0.5, 0.0)), (1.0, 0.5, 0.0, 1.0))
-    self.assertEqual(grapefruit.Color((1.0, 0.5, 0.0), mode='rgb'), (1.0, 0.5, 0.0, 1.0))
-    self.assertEqual(grapefruit.Color((30, 1, 0.5), mode='hsl'), (1.0, 0.5, 0.0, 1.0))
+    self.assertEqual(grapefruit.Colour((1.0, 0.5, 0.0)), (1.0, 0.5, 0.0, 1.0))
+    self.assertEqual(grapefruit.Colour((1.0, 0.5, 0.0), mode='rgb'), (1.0, 0.5, 0.0, 1.0))
+    self.assertEqual(grapefruit.Colour((30, 1, 0.5), mode='hsl'), (1.0, 0.5, 0.0, 1.0))
 
-    self.assertRaises(ValueError, grapefruit.Color, (30, 1, 0.5), 'hsv')
+    self.assertRaises(ValueError, grapefruit.Colour, (30, 1, 0.5), 'hsv')
 
   def testEq(self):
     self.assertEqual(self.rgbCol, self.hslCol)
@@ -239,7 +239,7 @@ class ColorTest(GrapeFruitTestCase):
 
   def testProperties(self):
     self.assertEqual(self.rgbCol.alpha, 1.0)
-    self.assertEqual(self.rgbCol.whiteRef, grapefruit.Color.WHITE_REFERENCE['std_D65'])
+    self.assertEqual(self.rgbCol.whiteRef, grapefruit.Colour.WHITE_REFERENCE['std_D65'])
     self.assertEqual(self.rgbCol.rgb, (1, 0.5, 0))
     self.assertEqual(self.hslCol.hue, 30)
     self.assertEqual(self.rgbCol.hsl, (30, 1, 0.5))
@@ -256,34 +256,34 @@ class ColorTest(GrapeFruitTestCase):
     self.assertEqual(self.rgbCol.webSafe, (1, 0.6, 0))
     self.assertEqual(self.rgbCol.greyscale, (0.5, 0.5, 0.5))
 
-    c = grapefruit.Color.NewFromRgb(1, 0.5, 0, wref=grapefruit.Color.WHITE_REFERENCE['std_D50'])
+    c = grapefruit.Colour.NewFromRgb(1, 0.5, 0, wref=grapefruit.Colour.WHITE_REFERENCE['std_D50'])
     self.assertNear(c.lab, (66.9518, 0.4117, 0.6728))
 
-  def testColorWitgAlpha(self):
-    self.assertEqual(self.rgbCol.ColorWithAlpha(0.5), (1, 0.5, 0, 0.5))
+  def testColourWitgAlpha(self):
+    self.assertEqual(self.rgbCol.ColourWithAlpha(0.5), (1, 0.5, 0, 0.5))
 
-  def testColorWithWhiteRef(self):
-    self.assertEqual(self.hslCol.ColorWithWhiteRef((0.1, 0.2, 0.3)).whiteRef, (0.1, 0.2, 0.3))
+  def testColourWithWhiteRef(self):
+    self.assertEqual(self.hslCol.ColourWithWhiteRef((0.1, 0.2, 0.3)).whiteRef, (0.1, 0.2, 0.3))
 
-  def testColorWithHue(self):
-    self.assertEqual(self.hslCol.ColorWithHue(60), (1.0, 1.0, 0.0, 1.0))
-    self.assertEqual(self.hslCol.ColorWithHue(60).hsl, (60, 1, 0.5))
+  def testColourWithHue(self):
+    self.assertEqual(self.hslCol.ColourWithHue(60), (1.0, 1.0, 0.0, 1.0))
+    self.assertEqual(self.hslCol.ColourWithHue(60).hsl, (60, 1, 0.5))
 
-  def testColorWithSaturation(self):
-    self.assertEqual(self.hslCol.ColorWithSaturation(0.5), (0.75, 0.5, 0.25, 1.0))
-    self.assertEqual(self.hslCol.ColorWithSaturation(0.5).hsl, (30, 0.5, 0.5))
+  def testColourWithSaturation(self):
+    self.assertEqual(self.hslCol.ColourWithSaturation(0.5), (0.75, 0.5, 0.25, 1.0))
+    self.assertEqual(self.hslCol.ColourWithSaturation(0.5).hsl, (30, 0.5, 0.5))
 
-  def testColorWithLightness(self):
-    self.assertEqual(self.hslCol.ColorWithLightness(1), (1.0, 1.0, 1.0, 1.0))
-    self.assertEqual(self.hslCol.ColorWithLightness(1).hsl, (30, 1.0, 1.0))
+  def testColourWithLightness(self):
+    self.assertEqual(self.hslCol.ColourWithLightness(1), (1.0, 1.0, 1.0, 1.0))
+    self.assertEqual(self.hslCol.ColourWithLightness(1).hsl, (30, 1.0, 1.0))
 
-  def testDarkerColor(self):
-    self.assertNear(self.hslCol.DarkerColor(0.2), (0.6, 0.3, 0.0, 1.0))
-    self.assertNear(self.hslCol.DarkerColor(0.2).hsl, (30, 1, 0.3))
+  def testDarkerColour(self):
+    self.assertNear(self.hslCol.DarkerColour(0.2), (0.6, 0.3, 0.0, 1.0))
+    self.assertNear(self.hslCol.DarkerColour(0.2).hsl, (30, 1, 0.3))
 
-  def testLighterColor(self):
-    self.assertNear(self.hslCol.LighterColor(0.2), (1.0, 0.7, 0.4, 1.0))
-    self.assertNear(self.hslCol.LighterColor(0.2).hsl, (30, 1, 0.7))
+  def testLighterColour(self):
+    self.assertNear(self.hslCol.LighterColour(0.2), (1.0, 0.7, 0.4, 1.0))
+    self.assertNear(self.hslCol.LighterColour(0.2).hsl, (30, 1, 0.7))
 
   def testSaturate(self):
     self.assertNear(self.hslCol2.Saturate(0.25), (0.875, 0.5, 0.125, 1.0))
@@ -304,12 +304,12 @@ class ColorTest(GrapeFruitTestCase):
       (0.75, 0.25, 0.0, 1.0),
       (0.5, 0.5, 0.0, 1.0),
       (0.25, 0.75, 0.0, 1.0)]
-    c1 = grapefruit.Color.NewFromRgb(1.0, 0.0, 0.0)
-    c2 = grapefruit.Color.NewFromRgb(0.0, 1.0, 0.0)
+    c1 = grapefruit.Colour.NewFromRgb(1.0, 0.0, 0.0)
+    c2 = grapefruit.Colour.NewFromRgb(0.0, 1.0, 0.0)
     self.assertEqual(gradient, c1.Gradient(c2, 3))
 
-  def testComplementaryColor(self):
-    self.assertEqual(self.hslCol.ComplementaryColor(mode='rgb').hsl, (210, 1, 0.5))
+  def testComplementaryColour(self):
+    self.assertEqual(self.hslCol.ComplementaryColour(mode='rgb').hsl, (210, 1, 0.5))
 
   def testMonochromeScheme(self):
     monochrome = (
@@ -341,17 +341,17 @@ class ColorTest(GrapeFruitTestCase):
     self.assertEqual(self.rgbCol.AnalogousScheme(mode='rgb'), scheme)
 
   def testAlphaBlend(self):
-    c1 = grapefruit.Color.NewFromRgb(1, 0.5, 0, alpha = 0.2)
-    c2 = grapefruit.Color.NewFromRgb(1, 1, 1, alpha = 0.8)
+    c1 = grapefruit.Colour.NewFromRgb(1, 0.5, 0, alpha = 0.2)
+    c2 = grapefruit.Colour.NewFromRgb(1, 1, 1, alpha = 0.8)
     self.assertNear(c1.AlphaBlend(c2), (1, 0.875, 0.75, 0.84))
 
   def testBlend(self):
-    c1 = grapefruit.Color.NewFromRgb(1, 0.5, 0, alpha = 0.2)
-    c2 = grapefruit.Color.NewFromRgb(1, 1, 1, alpha = 0.6)
+    c1 = grapefruit.Colour.NewFromRgb(1, 0.5, 0, alpha = 0.2)
+    c2 = grapefruit.Colour.NewFromRgb(1, 1, 1, alpha = 0.6)
     self.assertEqual(c1.Blend(c2), (1, 0.75, 0.5, 0.4))
 
   def testNearestLegal(self):
-      c = grapefruit.Color.NewFromRgb(1.1, -0.1, 0.5, alpha=1.1)
+      c = grapefruit.Colour.NewFromRgb(1.1, -0.1, 0.5, alpha=1.1)
       self.assertFalse(c.isLegal)
       self.assertNear(c.nearestLegal.rgb, (1.0, 0.0, 0.5))
       self.assertNear(c.nearestLegal.alpha, 1.0)
